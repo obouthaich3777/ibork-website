@@ -6,21 +6,19 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "products"
-    label: "Products"
-    folder: "content/products" # or your specific folder path
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Price", name: "price", widget: "string" }
-      - { label: "Main Image", name: "image", widget: "image" }
-      
-      # --- MULTIPLE IMAGES GALLERY ---
-      - label: "Product Gallery"
-        name: "gallery"
-        widget: "list"
-        field: { label: "Image", name: "image", widget: "image" }
-      # -------------------------------
-
-      - { label: "Description", name: "body", widget: "markdown" }
+  - name: "products_file"
+    label: "Products List"
+    files:
+      - file: "content/products.json"
+        label: "All Products"
+        name: "products"
+        fields:
+          - { label: "Products", name: "items", widget: "list", fields: [
+              { label: "ID", name: "id", widget: "string" },
+              { label: "Title", name: "title", widget: "string" },
+              { label: "Price", name: "price", widget: "number" },
+              { label: "Brand", name: "brand", widget: "string" },
+              { label: "Category", name: "category", widget: "string" },
+              { label: "Description", name: "desc", widget: "text" },
+              { label: "Image", name: "image", widget: "image" }
+            ]}

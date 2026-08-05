@@ -292,72 +292,20 @@
       5: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=600&q=80",
       6: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=600&q=80"
     };
+let PRODUCTS = [];
 
-    const PRODUCTS = [
-      {
-        id: 1,
-        title: "SAMSUNG CLIM WINDFREE 9000BTU AR70F09C1EB/RC BLACK",
-        category: "Climatisation",
-        brand: "Samsung",
-        price: 7599,
-        image: "images/samsung-windfree.png",
-        desc: "Refroidissement ultra-rapide et économie d'énergie A++. Silencieux et performant pour l'été."
-      },
-      {
-        id: 2,
-        title: "LG REF SXS GR-B507PQAM SILVER",
-        category: "Froid",
-        brand: "LG",
-        price: 9999,
-        image: "images/lg-fridge.png",
-        desc: "Technologie No-Frost sans givre. Multi-air flow avec compartiment fraîcheur légumes."
-      },
-      {
-        id: 3,
-        title: "MOULINEX BLENDER LM2C3125/LM2C3 450W MOULINEX",
-        category: "Cuisine",
-        brand: "Moulinex",
-        price: 450,
-        image: "images/moulinex-blender.png",
-        desc: "Lames en acier inoxydable haute résistance. Inclus bol hachoir et moulin."
-      },
-      {
-        id: 4,
-        title: "LG MAL F2X5PYNY7 8KG 1200T SILVER LG",
-        category: "Lavage",
-        brand: "LG",
-        price: 4000,
-        image: "images/lg-washing-machine.jpg",
-        desc: "Moteur Inverter Direct Drive durable et silencieux. 14 programmes de lavage intelligent AI DD."
-      },
-      {
-        id: 5,
-        title: "ELEXIA LED 50EAUD-D24 50\" SMART ELEXIA",
-        category: "TV & Audio",
-        brand: "Elexia",
-        price: 2799,
-        image: "images/elexia-tv.jpg",
-        desc: "Écran LED Smart TV avec Youtube, Netflix et récepteur intégré inclus."
-      },
-      {
-        id: 6,
-        title: "SOLAC MACHINE A CAFE ESPRESSO CE4480 + CARAFE MELODY 1",
-        category: "Cuisine",
-        brand: "Solac",
-        price: 899,
-        image: "images/solac-coffee.jpg",
-        desc: "Pression 19 bars pour un espresso crémeux et buse vapeur mousse + Carafe thermos offerte."
-      },
-      {
-        id: 7,
-        title: "ARTHUR MARTIN FOUR ENCA AZB3H00BX CH BRASSEE DIG IX ANTITRACE A",
-        category: "Cuisine",
-        brand: "Arthur Martin",
-        price: 3999,
-        image: "images/arthur-martin-four.jpg",
-        desc: "Four encastrable multifonction à chaleur brassée pour une cuisson homogène. Finition Inox anti-trace élégante avec affichage digital et classe énergétique A."
-      }
-    ];
+async function loadProducts() {
+  try {
+    const response = await fetch('/content/products.json');
+    const data = await response.json();
+    PRODUCTS = data.items || [];
+    renderProducts(PRODUCTS);
+  } catch (error) {
+    console.error("Error loading products:", error);
+  }
+}
+
+loadProducts();
 
     let activeCategory = "Tous";
     let cart = [];
