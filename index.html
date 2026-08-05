@@ -385,6 +385,80 @@ loadProducts();
       </div>`;
     return;
   }
+
+  grid.innerHTML = items.map(p => {
+    const defaultWaText = encodeURIComponent(`Bonjour Planet Electro Ibork, je souhaite commander : ${p.title} (${p.price ? p.price.toLocaleString() : ''} DH)`);
+
+    // Safely extract image URLs whether Decap saved them as strings or objects
+    let rawImages = Array.isArray(p.images) && p.images.length > 0 
+      ? p.images 
+      : (p.image ? [p.image] : ['/assets/placeholder.jpg']);
+
+    const imageList = rawImages.map(img => {
+      if (typeof img === 'object' && img !== null) {
+        return img.image || img.src || '/assets/placeholder.jpg';
+      }
+      return img;
+    });
+
+    const slidesHTML = imageList.map(imgSrc => `
+      <div class="swiper-slide flex items-center justify-center p-4 bg-white h-56">
+        <img src="${imgSrc}" alt="${p.title}" class="max-h-full w-auto object-contain" />
+      </div>
+    `).join('');
+
+    return `
+      <div class="group relative bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
+        
+        <!-- Badges Bar -->
+        <div class="absolute top-3 left-3 right-3 z-20 flex items-center justify-between pointer-events-none">
+          <span class="bg-emerald-600/90 backdrop-blur-md text-white font-extrabold text-[10px] px-3 py-1 rounded-full shadow-sm uppercase">Stock Settat</span>
+          <span class="bg-white/90 backdrop-blur-md text-brand-900 font-extrabold text-[10px] px-2.5 py-1 rounded-full border border-gray-100">${p.category || 'Électro'}</span>
+        </div>
+
+        <!-- Carousel -->
+        <div class="swiper product-carousel-${p.id} w-full h-56 relative group">
+          <div class="swiper-wrapper">
+            ${slidesHTML}
+          </div>
+          ${imageList.length > 1 ? `<div class="swiper-pagination"></div>` : ''}
+        </div>
+
+        <!-- Product Details -->
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">${p.brand || ''}</p>
+            <h3 class="font-bold text-gray-900 text-base line-clamp-2 mb-2 leading-snug">${p.title}</h3>
+            <p class="text-xs text-gray-500 line-clamp-2 mb-4">${p.desc || ''}</p>
+          </div>
+
+          <div class="pt-3 border-t border-gray-100 flex items-center justify-between mt-auto">
+            <div>
+              <span class="text-xs text-gray-400 block font-medium">Prix Magasin</span>
+              <span class="text-xl font-black text-brand-600">${p.price ? p.price.toLocaleString() : '---'} <small class="text-xs">DH</small></span>
+            </div>
+            <a href="https://wa.me/212684155929?text=${defaultWaText}" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-4 py-2.5 rounded-2xl flex items-center gap-2 transition-colors shadow-sm">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Commander
+            </a>
+          </div>
+        </div>
+
+      </div>
+    `;
+  }).join('');
+
+  // Initialize Swipers
+  items.forEach(p => {
+    new Swiper(`.product-carousel-${p.id}`, {
+      loop: true,
+      grabCursor: true,
+      pagination: {
+        el: `.product-carousel-${p.id} .swiper-pagination`,
+        clickable: true,
+      },
+    });
+  });
+}
   // 1. Generate HTML for all cards
   grid.innerHTML = items.map(p => {
     const defaultWaText = encodeURIComponent(`Bonjour Planet Electro Ibork, je souhaite commander : ${p.title} (${p.price ? p.price.toLocaleString() : ''} DH)`);
@@ -439,7 +513,7 @@ loadProducts();
       </div>
     `;
   }).join('');
-  
+
   function initCarousels() {
   new Swiper('.product-carousel', {
     loop: true,
