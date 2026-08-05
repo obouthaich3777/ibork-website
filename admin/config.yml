@@ -1,22 +1,26 @@
 backend:
   name: git-gateway
-  branch: main # Change to 'master' if your default Git branch is master
+  branch: main
 
-media_folder: "images/products"
-public_folder: "/images/products"
+media_folder: "images"
+public_folder: "/images"
 
 collections:
   - name: "products"
-    label: "Produits (Catalog)"
-    folder: "data/products"
+    label: "Products"
+    folder: "content/products" # or your specific folder path
     create: true
     slug: "{{slug}}"
-    format: "json"
     fields:
-      - { label: "Nom du Produit", name: "title", widget: "string" }
-      - { label: "Catégorie", name: "category", widget: "select", options: ["Télévisions", "Climatisation", "Réfrigérateurs", "Lave-Linge", "Petit Électroménager"] }
-      - { label: "Prix (DH)", name: "price", widget: "number", value_type: "int" }
-      - { label: "Ancien Prix (DH)", name: "old_price", widget: "number", value_type: "int", required: false }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "En Stock", name: "in_stock", widget: "boolean", default: true }
-      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Main Image", name: "image", widget: "image" }
+      
+      # --- MULTIPLE IMAGES GALLERY ---
+      - label: "Product Gallery"
+        name: "gallery"
+        widget: "list"
+        field: { label: "Image", name: "image", widget: "image" }
+      # -------------------------------
+
+      - { label: "Description", name: "body", widget: "markdown" }
