@@ -12,13 +12,25 @@ collections:
       - file: "content/products.json"
         label: "All Products"
         name: "products"
+        collections:
+  - name: "products_file"
+    label: "Products List"
+    files:
+      - file: "content/products.json"
+        label: "All Products"
+        name: "products"
         fields:
-          - { label: "Products", name: "items", widget: "list", fields: [
-              { label: "ID", name: "id", widget: "string" },
-              { label: "Title", name: "title", widget: "string" },
-              { label: "Price", name: "price", widget: "number" },
-              { label: "Brand", name: "brand", widget: "string" },
-              { label: "Category", name: "category", widget: "string" },
-              { label: "Description", name: "desc", widget: "text" },
-              { label: "Image", name: "image", widget: "image" }
-            ]}
+          - label: "Products"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Price", name: "price", widget: "number" }
+              - { label: "Brand", name: "brand", widget: "string" }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                field: { label: "Image", name: "image", widget: "image" }
