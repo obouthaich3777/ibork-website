@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main # Change to 'master' if your default Git branch is master
+
+media_folder: "images/products"
+public_folder: "/images/products"
+
+collections:
+  - name: "products"
+    label: "Produits (Catalog)"
+    folder: "data/products"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    fields:
+      - { label: "Nom du Produit", name: "title", widget: "string" }
+      - { label: "Catégorie", name: "category", widget: "select", options: ["Télévisions", "Climatisation", "Réfrigérateurs", "Lave-Linge", "Petit Électroménager"] }
+      - { label: "Prix (DH)", name: "price", widget: "number", value_type: "int" }
+      - { label: "Ancien Prix (DH)", name: "old_price", widget: "number", value_type: "int", required: false }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "En Stock", name: "in_stock", widget: "boolean", default: true }
+      - { label: "Description", name: "description", widget: "text" }
