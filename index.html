@@ -306,16 +306,20 @@
     };
 let PRODUCTS = [];
 
-async function loadProducts() {
-  try {
-    const response = await fetch('/content/products.json');
-    const data = await response.json();
-    PRODUCTS = data.items || [];
-    renderProducts(PRODUCTS);
-  } catch (error) {
-    console.error("Error loading products:", error);
-  }
-}
+fetch('content/products.json')
+  .then(response => response.json())
+  .then(data => {
+    // Safely extract products whether Decap saved as { items: [...] } or direct [...]
+    const products = Array.isArray(data) ? data : (data.items || []);
+    
+    // Save to global variable if needed and render
+    window.PRODUCTS = products;
+    renderProducts(products);
+    if (typeof renderCategoryTabs === 'function') renderCategoryTabs();
+  })
+  .catch(err => {
+    console.error('Error loading products:', err);
+  });
 
 loadProducts();
 
@@ -377,14 +381,35 @@ loadProducts();
   const grid = document.getElementById("productGrid");
   if (!grid) return;
 
-  if (items.length === 0) {
+  // Fallback if items is missing or not an array
+  const list = Array.isArray(items) ? items : [];
+
+  if (list.length === 0) {
     grid.innerHTML = `
       <div class="col-span-full py-16 text-center text-gray-400">
-        <i class="fa-solid fa-magnifying-glass text-4xl mb-3"></i>
-        <p class="text-sm font-semibold">Aucun équipement trouvé pour votre recherche.</p>
+        <i class="fa-solid fa-box-open text-4xl mb-3"></i>
+        <p class="text-sm font-semibold">Aucun équipement disponible pour le moment.</p>
       </div>`;
     return;
   }
+  
+  // Use 'list' for mapping...
+  grid.innerHTML = list.map(p => {
+    // ... rest of your code ...
+  }).join('');
+
+  // Initialize Swipers
+  list.forEach(p => {
+    new Swiper(`.product-carousel-${p.id}`, {
+      loop: true,
+      grabCursor: true,
+      pagination: {
+        el: `.product-carousel-${p.id} .swiper-pagination`,
+        clickable: true,
+      },
+    });
+  });
+}
 
   grid.innerHTML = items.map(p => {
     const defaultWaText = encodeURIComponent(`Bonjour Planet Electro Ibork, je souhaite commander : ${p.title} (${p.price ? p.price.toLocaleString() : ''} DH)`);
