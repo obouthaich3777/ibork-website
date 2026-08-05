@@ -1,25 +1,17 @@
 {
   "items": [
     {
+      "images": [
+        "/assets/images/screenshot-2026-08-05-212749.png",
+        "/assets/images/screenshot-2026-08-05-202724.png",
+        "/assets/images/screenshot-2026-08-05-202743.png"
+      ],
+      "title": "FOUR ENCA AZB3H00BX CH BRASSEE DIG IX ANTITRACE A",
+      "price": 3999,
+      "brand": "ARTHUR MARTIN",
+      "category": "Cuisine",
       "id": "1",
-<<<<<<< HEAD
-      "title": "NETTOYEUR HAUTE PRESSION K2 PREMIUM",
-      "brand": "KARCHER",
-      "price": 1799,
-      "category": "Nettoyage ",
-      "desc": "Conçu pour le nettoyage des voitures, motos, vélos, du mobilier de jardin et des outils de jardinage. Offrant une pression allant jusqu'à 110 bars, il élimine la saleté incrustée rapidement et sans effort",
-      "image": "/images/img_8568.jpeg"
+      "desc": "Doté d'un affichage digital, d'une finition en inox anti-traces et d'une efficacité énergétique de Classe A pour une cuisson uniforme et parfaitement maîtrisée"
     }
   ]
 }
-=======
-      "title": "KARCHER NETTOYEUR HAUTE PRESSION K2 PREMIUM",
-      "price": 1499,
-      "brand": "Kärcher",
-      "category": "Nettoyage",
-      "desc": "Conçu pour le nettoyage des voitures, motos, vélos, du mobilier de jardin et des outils de jardinage. Offrant une pression allant jusqu'à 110 bars.",
-      "image": "/images/img_8568.jpeg"
-    }
-  ]
-}
->>>>>>> 30a3ff0 (Enable multi-image gallery with dynamic carousel)
