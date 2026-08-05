@@ -2,33 +2,26 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: "assets/images"
+public_folder: "/assets/images"
 
 collections:
-  - name: "products_file"
-    label: "Products List"
+  - name: "catalog"
+    label: "Catalogue"
     files:
       - file: "content/products.json"
-        label: "All Products"
-        name: "products"
-        collections:
-  - name: "products_file"
-    label: "Products List"
-    files:
-      - file: "content/products.json"
-        label: "All Products"
-        name: "products"
+        label: "Tous les Produits"
+        name: "products_list"
         fields:
-          - label: "Products"
+          - label: "Produits"
             name: "items"
             widget: "list"
             fields:
               - { label: "ID", name: "id", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Price", name: "price", widget: "number" }
-              - { label: "Brand", name: "brand", widget: "string" }
-              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Prix (DH)", name: "price", widget: "number" }
+              - { label: "Marque", name: "brand", widget: "string" }
+              - { label: "Catégorie", name: "category", widget: "string" }
               - { label: "Description", name: "desc", widget: "text" }
               - label: "Images"
                 name: "images"
