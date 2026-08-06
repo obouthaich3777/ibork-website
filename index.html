@@ -5,22 +5,23 @@
   <meta name="google-site-verification" content="cCh4oe3tzoEth3h2p5YAFtYw01xXXHXNGvH7gGhKOYo" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <!-- Enhanced SEO Tags -->
+
+  <!-- Swiper CSS & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- SEO Tags -->
   <title>Planet Electro Ibork Settat | Électroménager & High-Tech au Meilleur Prix</title>
   <meta name="description" content="Magasin Planet Electro Ibork à Settat. Vente d'électroménager, climatisation, téléviseurs et équipements de cuisine au meilleur prix avec garantie. Rue des Martyrs, Settat.">
   <meta name="keywords" content="Ibork, Planet Electro Ibork, Electro Ibork Settat, electromenager settat, climatiseur settat, samsung settat, lg settat">
   <meta name="author" content="Planet Electro Ibork">
 
-  <!-- Open Graph for Facebook & WhatsApp Link Previews -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Planet Electro Ibork | Magasin Électroménager Settat">
   <meta property="og:description" content="Consultez nos produits, prix et commandez directement par WhatsApp à Settat.">
   <meta property="og:type" content="website">
 
-  <!-- Local Business Structured Data for Google -->
+  <!-- Local Business Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,7 +44,8 @@
   }
   </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%232563eb'/><text y='68' x='15' font-size='55' font-weight='900' fill='white' font-family='sans-serif'>iB</text></svg>">
-  <!-- Tailwind CSS & FontAwesome Icons -->
+  
+  <!-- Tailwind CSS & Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -69,13 +71,13 @@
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     .animate-fade-in { animation: fadeIn 0.25s ease-out forwards; }
     .swiper-pagination-bullet-active {
-  background-color: #059669 !important; /* Emerald active dot */
-  width: 16px !important;
-  border-radius: 4px !important;
-}
-.swiper-pagination-bullet {
-  transition: all 0.3s ease;
-}
+      background-color: #059669 !important;
+      width: 16px !important;
+      border-radius: 4px !important;
+    }
+    .swiper-pagination-bullet {
+      transition: all 0.3s ease;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-600 selection:text-white">
@@ -121,14 +123,12 @@
 
       <!-- Action Buttons -->
       <div class="flex items-center gap-3">
-        <!-- Quote Cart Drawer Trigger -->
         <button onclick="toggleCartDrawer()" class="relative p-2.5 bg-gray-100 hover:bg-gray-200/80 text-gray-800 rounded-2xl transition flex items-center gap-2 px-3.5">
           <i class="fa-solid fa-basket-shopping text-lg text-brand-600"></i>
           <span class="hidden sm:inline text-xs font-bold">Mon Devis</span>
           <span id="cartBadge" class="bg-emerald-600 text-white text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">0</span>
         </button>
 
-        <!-- Direct WhatsApp Link -->
         <a href="https://wa.me/212684155929" target="_blank" class="hidden sm:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-2xl font-bold text-xs transition shadow-lg shadow-emerald-600/25">
           <i class="fa-brands fa-whatsapp text-base"></i>
           <span>06 84 15 59 29</span>
@@ -175,15 +175,12 @@
 
   <!-- MAIN CATALOG CONTENT -->
   <main id="catalogue" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 w-full">
-    
-    <!-- Section Title & Filters Bar -->
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
       <div>
         <h2 class="text-2xl font-black text-gray-900 tracking-tight">Nos Produits En Vedette</h2>
         <p class="text-xs text-gray-500 font-medium mt-0.5">Cliquez sur un produit pour voir tous les détails ou l'ajouter à votre devis.</p>
       </div>
 
-      <!-- Filter Buttons Container -->
       <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none custom-scrollbar" id="categoryTabs">
         <!-- Rendered dynamically -->
       </div>
@@ -220,11 +217,9 @@
         </div>
         <p class="text-xs text-gray-500 mb-4">Les articles sélectionnés seront directement formatés dans votre message WhatsApp à destination du magasin.</p>
 
-        <!-- Cart Items List -->
         <div id="cartItemsList" class="space-y-3 max-h-[55vh] overflow-y-auto custom-scrollbar pr-1"></div>
       </div>
 
-      <!-- Drawer Footer -->
       <div class="pt-4 border-t border-gray-100">
         <div class="flex justify-between items-center mb-4">
           <span class="text-sm font-bold text-gray-600">Total Estimé:</span>
@@ -256,27 +251,26 @@
         </p>
       </div>
 
-<div>
-      <h4 class="text-white font-bold text-sm mb-3">Coordonnées</h4>
-      <ul class="space-y-2 text-xs">
-        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-500"></i> Téléphone / WhatsApp: 06 84 15 59 29</li>
-        <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-500"></i> 66 Rue des Martyrs, Settat, Maroc</li>
-        <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-brand-500"></i> Ouvert du Lundi au Samedi</li>
-      </ul>
+      <div>
+        <h4 class="text-white font-bold text-sm mb-3">Coordonnées</h4>
+        <ul class="space-y-2 text-xs">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-500"></i> Téléphone / WhatsApp: 06 84 15 59 29</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-500"></i> 66 Rue des Martyrs, Settat, Maroc</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-brand-500"></i> Ouvert du Lundi au Samedi</li>
+        </ul>
 
-      <!-- Google Map Embed -->
-      <div class="mt-4 rounded-xl overflow-hidden border border-gray-800 shadow-md h-36 w-full">
-        <iframe 
-          title="Google Map Location"
-          src="https://maps.google.com/maps?q=66%20Rue%20des%20Martyrs%2C%20Settat%2C%20Morocco&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          loading="lazy" 
-          allowfullscreen>
-        </iframe>
+        <div class="mt-4 rounded-xl overflow-hidden border border-gray-800 shadow-md h-36 w-full">
+          <iframe 
+            title="Google Map Location"
+            src="https://maps.google.com/maps?q=66%20Rue%20des%20Martyrs%2C%20Settat%2C%20Morocco&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            loading="lazy" 
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
-    </div>
 
       <div>
         <h4 class="text-white font-bold text-sm mb-3">Service WhatsApp Direct</h4>
@@ -291,62 +285,52 @@
     </div>
   </footer>
 
-  <!-- APPLICATION JAVASCRIPT LOGIC -->
+  <!-- UNIFIED APPLICATION JAVASCRIPT LOGIC -->
   <script>
     const STORE_PHONE = "212684155929";
+    let PRODUCTS = [];
+    let cart = [];
+    let activeCategory = "Tous";
+    const swiperInstances = {};
 
-    // Online fallback images in case local files miss or have extension mismatch
     const ONLINE_FALLBACKS = {
       1: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80",
       2: "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?auto=format&fit=crop&w=600&q=80",
-      3: "https://images.unsplash.com/photo-1585237772655-e39264f50689?auto=format&fit=crop&w=600&q=80",
-      4: "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&fit=crop&w=600&q=80",
-      5: "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=600&q=80",
-      6: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=600&q=80"
+      3: "https://images.unsplash.com/photo-1585237772655-e39264f50689?auto=format&fit=crop&w=600&q=80"
     };
-let PRODUCTS = [];
 
-fetch('content/products.json')
-  .then(response => response.json())
-  .then(data => {
-    // Safely extract products whether Decap saved as { items: [...] } or direct [...]
-    const products = Array.isArray(data) ? data : (data.items || []);
-    
-    // Save to global variable if needed and render
-    window.PRODUCTS = products;
-    renderProducts(products);
-    if (typeof renderCategoryTabs === 'function') renderCategoryTabs();
-  })
-  .catch(err => {
-    console.error('Error loading products:', err);
-  });
-
-loadProducts();
-
-    let activeCategory = "Tous";
-    let cart = [];
-
-    // Intelligent Image Error Recovery Strategy
     function handleImgError(img, id) {
-      if (img.src.endsWith('.png')) {
-        img.src = img.src.replace('.png', '.jpg');
-      } else if (img.src.endsWith('.jpg')) {
-        img.src = img.src.replace('.jpg', '.png');
-      } else {
-        img.onerror = null;
-        img.src = ONLINE_FALLBACKS[id] || 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80';
-      }
+      img.onerror = null;
+      img.src = ONLINE_FALLBACKS[id] || 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80';
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      renderCategoryTabs();
-      renderProducts(PRODUCTS);
+      fetch('content/products.json')
+        .then(res => res.json())
+        .then(data => {
+          if (Array.isArray(data)) {
+            PRODUCTS = data;
+          } else if (data && Array.isArray(data.items)) {
+            PRODUCTS = data.items;
+          } else if (data && Array.isArray(data.products)) {
+            PRODUCTS = data.products;
+          } else {
+            PRODUCTS = [];
+          }
+          window.PRODUCTS = PRODUCTS;
+          renderCategoryTabs();
+          filterProducts();
+        })
+        .catch(err => {
+          console.error('Error loading products.json:', err);
+          renderProducts([]);
+        });
     });
 
     function renderCategoryTabs() {
-      const categories = ["Tous", ...new Set(PRODUCTS.map(p => p.category))];
       const container = document.getElementById("categoryTabs");
       if (!container) return;
+      const categories = ["Tous", ...new Set(PRODUCTS.map(p => p.category).filter(Boolean))];
 
       container.innerHTML = categories.map(cat => `
         <button onclick="selectCategory('${cat}')" 
@@ -363,274 +347,161 @@ loadProducts();
     }
 
     function filterProducts() {
-      const query = document.getElementById("searchInput").value.toLowerCase();
+      const queryInput = document.getElementById("searchInput");
+      const query = queryInput ? queryInput.value.toLowerCase() : "";
+      
       const filtered = PRODUCTS.filter(p => {
-        const matchesCategory = activeCategory === "Tous" || p.category === activeCategory;
-        const matchesQuery = p.title.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query) || p.brand.toLowerCase().includes(query);
-        return matchesCategory && matchesQuery;
+        const matchesCat = activeCategory === "Tous" || p.category === activeCategory;
+        const title = (p.title || "").toLowerCase();
+        const desc = (p.desc || "").toLowerCase();
+        const brand = (p.brand || "").toLowerCase();
+        return matchesCat && (title.includes(query) || desc.includes(query) || brand.includes(query));
       });
       renderProducts(filtered);
     }
 
     function syncMobileSearch(val) {
-      document.getElementById("searchInput").value = val;
+      const desktopSearch = document.getElementById("searchInput");
+      if (desktopSearch) desktopSearch.value = val;
       filterProducts();
     }
 
     function renderProducts(items) {
-  const grid = document.getElementById("productGrid");
-  if (!grid) return;
+      const grid = document.getElementById("productGrid");
+      if (!grid) return;
 
-  // Fallback if items is missing or not an array
-  const list = Array.isArray(items) ? items : [];
+      const list = Array.isArray(items) ? items : [];
 
-  if (list.length === 0) {
-    grid.innerHTML = `
-      <div class="col-span-full py-16 text-center text-gray-400">
-        <i class="fa-solid fa-box-open text-4xl mb-3"></i>
-        <p class="text-sm font-semibold">Aucun équipement disponible pour le moment.</p>
-      </div>`;
-    return;
-  }
-  
-  // Use 'list' for mapping...
-  grid.innerHTML = list.map(p => {
-    // ... rest of your code ...
-  }).join('');
+      // Clean up existing Swiper instances to avoid memory leaks or glitchy re-initializations
+      Object.keys(swiperInstances).forEach(key => {
+        if (swiperInstances[key] && typeof swiperInstances[key].destroy === 'function') {
+          swiperInstances[key].destroy(true, true);
+        }
+        delete swiperInstances[key];
+      });
 
-  // Initialize Swipers
-  list.forEach(p => {
-    new Swiper(`.product-carousel-${p.id}`, {
-      loop: true,
-      grabCursor: true,
-      pagination: {
-        el: `.product-carousel-${p.id} .swiper-pagination`,
-        clickable: true,
-      },
-    });
-  });
-}
-
-  grid.innerHTML = items.map(p => {
-    const defaultWaText = encodeURIComponent(`Bonjour Planet Electro Ibork, je souhaite commander : ${p.title} (${p.price ? p.price.toLocaleString() : ''} DH)`);
-
-    // Safely extract image URLs whether Decap saved them as strings or objects
-    let rawImages = Array.isArray(p.images) && p.images.length > 0 
-      ? p.images 
-      : (p.image ? [p.image] : ['/assets/placeholder.jpg']);
-
-    const imageList = rawImages.map(img => {
-      if (typeof img === 'object' && img !== null) {
-        return img.image || img.src || '/assets/placeholder.jpg';
+      if (list.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 text-center text-gray-400">
+            <i class="fa-solid fa-box-open text-4xl mb-3"></i>
+            <p class="text-sm font-semibold">Aucun équipement disponible pour le moment.</p>
+          </div>`;
+        return;
       }
-      return img;
-    });
 
-    const slidesHTML = imageList.map(imgSrc => `
-      <div class="swiper-slide flex items-center justify-center p-4 bg-white h-56">
-        <img src="${imgSrc}" alt="${p.title}" class="max-h-full w-auto object-contain" />
-      </div>
-    `).join('');
+      grid.innerHTML = list.map((p, idx) => {
+        const safeId = p.id ? String(p.id).replace(/[^a-zA-Z0-9_-]/g, '') : `item-${idx}`;
+        const priceNum = Number(p.price) || 0;
+        const defaultWaText = encodeURIComponent(`Bonjour Planet Electro Ibork, je souhaite commander : ${p.title || ''} (${priceNum ? priceNum.toLocaleString() : '---'} MAD).`);
 
-    return `
-      <div class="group relative bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
-        
-        <!-- Badges Bar -->
-        <div class="absolute top-3 left-3 right-3 z-20 flex items-center justify-between pointer-events-none">
-          <span class="bg-emerald-600/90 backdrop-blur-md text-white font-extrabold text-[10px] px-3 py-1 rounded-full shadow-sm uppercase">Stock Settat</span>
-          <span class="bg-white/90 backdrop-blur-md text-brand-900 font-extrabold text-[10px] px-2.5 py-1 rounded-full border border-gray-100">${p.category || 'Électro'}</span>
-        </div>
+        // Normalizing image paths whether CMS saved strings, direct image string, or objects
+        let rawImages = Array.isArray(p.images) && p.images.length > 0 
+          ? p.images 
+          : (p.image ? [p.image] : []);
 
-        <!-- Carousel -->
-        <div class="swiper product-carousel-${p.id} w-full h-56 relative group">
-          <div class="swiper-wrapper">
-            ${slidesHTML}
+        let imageList = rawImages.map(img => {
+          if (typeof img === 'object' && img !== null) return img.image || img.src || '';
+          return img;
+        }).filter(Boolean);
+
+        if (imageList.length === 0) {
+          imageList = ['https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80'];
+        }
+
+        const slidesHTML = imageList.map(imgSrc => `
+          <div class="swiper-slide flex items-center justify-center p-4 bg-white h-56">
+            <img src="${imgSrc}" alt="${p.title || ''}" onerror="handleImgError(this, '${safeId}')" class="max-h-full w-auto object-contain" />
           </div>
-          ${imageList.length > 1 ? `<div class="swiper-pagination"></div>` : ''}
-        </div>
+        `).join('');
 
-        <!-- Product Details -->
-        <div class="p-5 flex-1 flex flex-col justify-between">
-          <div>
-            <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">${p.brand || ''}</p>
-            <h3 class="font-bold text-gray-900 text-base line-clamp-2 mb-2 leading-snug">${p.title}</h3>
-            <p class="text-xs text-gray-500 line-clamp-2 mb-4">${p.desc || ''}</p>
-          </div>
-
-          <div class="pt-3 border-t border-gray-100 flex items-center justify-between mt-auto">
-            <div>
-              <span class="text-xs text-gray-400 block font-medium">Prix Magasin</span>
-              <span class="text-xl font-black text-brand-600">${p.price ? p.price.toLocaleString() : '---'} <small class="text-xs">DH</small></span>
-            </div>
-            <a href="https://wa.me/212684155929?text=${defaultWaText}" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-4 py-2.5 rounded-2xl flex items-center gap-2 transition-colors shadow-sm">
-              <i class="fa-brands fa-whatsapp text-sm"></i> Commander
-            </a>
-          </div>
-        </div>
-
-      </div>
-    `;
-  }).join('');
-
-  // Initialize Swipers
-  items.forEach(p => {
-    new Swiper(`.product-carousel-${p.id}`, {
-      loop: true,
-      grabCursor: true,
-      pagination: {
-        el: `.product-carousel-${p.id} .swiper-pagination`,
-        clickable: true,
-      },
-    });
-  });
-}
-  // 1. Generate HTML for all cards
-  grid.innerHTML = items.map(p => {
-    const defaultWaText = encodeURIComponent(`Bonjour Planet Electro Ibork, je souhaite commander : ${p.title} (${p.price ? p.price.toLocaleString() : ''} DH)`);
-
-    // Handle both multi-image list and fallback single image
-    const imageList = Array.isArray(p.images) && p.images.length > 0 
-      ? p.images 
-      : [p.image || '/assets/placeholder.jpg'];
-
-    const slidesHTML = imageList.map(img => `
-      <div class="swiper-slide flex items-center justify-center p-4 bg-white">
-        <img src="${img}" alt="${p.title}" class="h-48 w-full object-contain" />
-      </div>
-    `).join('');
-
-    return `
-      <div class="group relative bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
-        
-        <!-- Badges Bar -->
-        <div class="absolute top-3 left-3 right-3 z-20 flex items-center justify-between pointer-events-none">
-          <span class="bg-emerald-600/90 backdrop-blur-md text-white font-extrabold text-[10px] px-3 py-1 rounded-full shadow-sm uppercase">Stock Settat</span>
-          <span class="bg-white/90 backdrop-blur-md text-brand-900 font-extrabold text-[10px] px-2.5 py-1 rounded-full border border-gray-100">${p.category || 'Électro'}</span>
-        </div>
-
-        <!-- Swiper Image Carousel Container -->
-        <div class="swiper product-carousel-${p.id} w-full h-56 relative group">
-          <div class="swiper-wrapper">
-            ${slidesHTML}
-          </div>
-          ${imageList.length > 1 ? `<div class="swiper-pagination"></div>` : ''}
-        </div>
-
-        <!-- Product Details & Action -->
-        <div class="p-5 flex-1 flex flex-col justify-between">
-          <div>
-            <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">${p.brand || ''}</p>
-            <h3 class="font-bold text-gray-900 text-base line-clamp-2 mb-2 leading-snug">${p.title}</h3>
-            <p class="text-xs text-gray-500 line-clamp-2 mb-4">${p.desc || ''}</p>
-          </div>
-
-          <div class="pt-3 border-t border-gray-100 flex items-center justify-between mt-auto">
-            <div>
-              <span class="text-xs text-gray-400 block font-medium">Prix Magasin</span>
-              <span class="text-xl font-black text-brand-600">${p.price ? p.price.toLocaleString() : '---'} <small class="text-xs">DH</small></span>
-            </div>
-            <a href="https://wa.me/212684155929?text=${defaultWaText}" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-4 py-2.5 rounded-2xl flex items-center gap-2 transition-colors shadow-sm">
-              <i class="fa-brands fa-whatsapp text-sm"></i> Commander
-            </a>
-          </div>
-        </div>
-
-      </div>
-    `;
-  }).join('');
-
-  function initCarousels() {
-  new Swiper('.product-carousel', {
-    loop: true,
-    spaceBetween: 10,
-    grabCursor: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
-}
-
-      grid.innerHTML = items.map(p => {
-        const defaultWaText = encodeURIComponent(`Bonjour Planet Electro Ibork, je souhaite commander : ${p.title} (${p.price.toLocaleString()} MAD).`);
         return `
-        <div class="group relative bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
-          
-          <!-- Badges Bar -->
-          <div class="absolute top-3 left-3 right-3 z-10 flex items-center justify-between pointer-events-none">
-            <span class="bg-emerald-600/90 backdrop-blur-md text-white font-extrabold text-[10px] px-3 py-1 rounded-full shadow-sm uppercase tracking-wider">
-              Stock Settat
-            </span>
-            <span class="bg-white/90 backdrop-blur-md text-brand-900 font-extrabold text-[10px] px-2.5 py-1 rounded-full border border-gray-200/80 shadow-sm uppercase tracking-wider">
-              ${p.category}
-            </span>
-          </div>
-
-          <!-- Image Box with Zoom Effect -->
-          <div class="relative w-full pt-[75%] bg-gray-50/80 overflow-hidden cursor-pointer" onclick="openModal(${p.id})">
-            <img src="${p.image}" alt="${p.title}" onerror="handleImgError(this, ${p.id})" 
-                 class="absolute inset-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500 ease-out" />
-          </div>
-
-          <!-- Card Content Body -->
-          <div class="p-6 flex flex-col flex-grow justify-between">
-            <div>
-              <span class="text-[11px] font-bold text-brand-600 uppercase tracking-widest block mb-1">${p.brand}</span>
-              <h3 onclick="openModal(${p.id})" class="font-bold text-gray-900 text-sm leading-snug line-clamp-2 group-hover:text-brand-600 transition cursor-pointer mb-2">
-                ${p.title}
-              </h3>
-              <p class="text-xs text-gray-500 line-clamp-2 leading-relaxed">${p.desc}</p>
+          <div class="group relative bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between">
+            <div class="absolute top-3 left-3 right-3 z-20 flex items-center justify-between pointer-events-none">
+              <span class="bg-emerald-600/90 backdrop-blur-md text-white font-extrabold text-[10px] px-3 py-1 rounded-full shadow-sm uppercase">Stock Settat</span>
+              <span class="bg-white/90 backdrop-blur-md text-brand-900 font-extrabold text-[10px] px-2.5 py-1 rounded-full border border-gray-100">${p.category || 'Électro'}</span>
             </div>
 
-            <!-- Price & Action Footer -->
-            <div class="mt-6 pt-4 border-t border-gray-100 flex items-end justify-between gap-2">
+            <div class="swiper product-carousel-${safeId} w-full h-56 relative group">
+              <div class="swiper-wrapper">
+                ${slidesHTML}
+              </div>
+              ${imageList.length > 1 ? `<div class="swiper-pagination"></div>` : ''}
+            </div>
+
+            <div class="p-5 flex-1 flex flex-col justify-between">
               <div>
-                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider block">Prix Magasin</span>
-                <span class="text-xl font-black text-brand-900">${p.price.toLocaleString()} <span class="text-xs text-brand-600 font-bold">MAD</span></span>
-                <p class="text-[10px] text-gray-400 font-medium">ou ~${Math.round(p.price / 12)} MAD/mois</p>
+                <span class="text-[11px] font-bold text-brand-600 uppercase tracking-widest block mb-1">${p.brand || ''}</span>
+                <h3 onclick="openModal('${p.id}')" class="font-bold text-gray-900 text-base line-clamp-2 leading-snug cursor-pointer hover:text-brand-600 transition mb-2">${p.title || ''}</h3>
+                <p class="text-xs text-gray-500 line-clamp-2 mb-4">${p.desc || ''}</p>
               </div>
 
-              <div class="flex items-center gap-2">
-                <button onclick="addToCart(${p.id})" title="Ajouter au devis" class="bg-gray-100 hover:bg-brand-50 hover:text-brand-600 text-gray-700 p-3 rounded-2xl transition">
-                  <i class="fa-solid fa-plus text-sm"></i>
-                </button>
-                <a href="https://wa.me/${STORE_PHONE}?text=${defaultWaText}" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-3 rounded-2xl text-xs font-bold flex items-center gap-1.5 transition shadow-md shadow-emerald-600/20">
-                  <i class="fa-brands fa-whatsapp text-base"></i>
-                  <span>Acheter</span>
-                </a>
+              <div class="pt-3 border-t border-gray-100 flex items-center justify-between mt-auto gap-2">
+                <div>
+                  <span class="text-xs text-gray-400 block font-medium">Prix Magasin</span>
+                  <span class="text-xl font-black text-brand-600">${priceNum ? priceNum.toLocaleString() : '---'} <small class="text-xs">MAD</small></span>
+                </div>
+                
+                <div class="flex items-center gap-2">
+                  <button onclick="addToCart('${p.id}')" title="Ajouter au devis" class="bg-gray-100 hover:bg-brand-50 hover:text-brand-600 text-gray-700 p-2.5 rounded-2xl transition">
+                    <i class="fa-solid fa-plus text-sm"></i>
+                  </button>
+                  <a href="https://wa.me/${STORE_PHONE}?text=${defaultWaText}" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-3.5 py-2.5 rounded-2xl flex items-center gap-1.5 transition-colors shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Commander
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+        `;
+      }).join('');
 
-        </div>
-      `}).join('');
+      // Initialize Swipers
+      list.forEach((p, idx) => {
+        const safeId = p.id ? String(p.id).replace(/[^a-zA-Z0-9_-]/g, '') : `item-${idx}`;
+        const selector = `.product-carousel-${safeId}`;
+        const el = document.querySelector(selector);
+        if (el) {
+          swiperInstances[safeId] = new Swiper(selector, {
+            loop: true,
+            grabCursor: true,
+            pagination: {
+              el: `${selector} .swiper-pagination`,
+              clickable: true,
+            },
+          });
+        }
+      });
     }
 
     function openModal(id) {
-      const p = PRODUCTS.find(item => item.id === id);
-      const waMsg = encodeURIComponent(`Bonjour Planet Electro Ibork, je souhaite avoir plus de détails concernant : ${p.title} (${p.price.toLocaleString()} MAD).`);
+      const p = PRODUCTS.find(item => String(item.id) === String(id));
+      if (!p) return;
+
+      const priceNum = Number(p.price) || 0;
+      const waMsg = encodeURIComponent(`Bonjour Planet Electro Ibork, je souhaite avoir plus de détails concernant : ${p.title} (${priceNum.toLocaleString()} MAD).`);
+
+      let rawImages = Array.isArray(p.images) && p.images.length > 0 ? p.images : (p.image ? [p.image] : []);
+      let mainImg = rawImages[0];
+      if (typeof mainImg === 'object' && mainImg !== null) mainImg = mainImg.image || mainImg.src;
+      if (!mainImg) mainImg = 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80';
 
       document.getElementById("modalContent").innerHTML = `
         <div class="bg-gray-50 p-8 flex items-center justify-center h-64 border-b border-gray-100">
-          <img src="${p.image}" onerror="handleImgError(this, ${p.id})" class="max-h-full object-contain">
+          <img src="${mainImg}" onerror="handleImgError(this, '${p.id}')" class="max-h-full object-contain">
         </div>
         <div class="p-6">
-          <span class="text-xs font-bold text-brand-600 uppercase tracking-widest">${p.category} • ${p.brand}</span>
-          <h3 class="text-lg font-black text-gray-900 mt-1 leading-snug">${p.title}</h3>
-          <p class="text-xs text-gray-600 mt-3 leading-relaxed">${p.desc}</p>
+          <span class="text-xs font-bold text-brand-600 uppercase tracking-widest">${p.category || ''} • ${p.brand || ''}</span>
+          <h3 class="text-lg font-black text-gray-900 mt-1 leading-snug">${p.title || ''}</h3>
+          <p class="text-xs text-gray-600 mt-3 leading-relaxed">${p.desc || ''}</p>
           
           <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
             <div>
               <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider block">Prix Settat</span>
-              <span class="text-2xl font-black text-brand-900">${p.price.toLocaleString()} MAD</span>
+              <span class="text-2xl font-black text-brand-900">${priceNum ? priceNum.toLocaleString() : '---'} MAD</span>
             </div>
 
             <div class="flex gap-2">
-              <button onclick="addToCart(${p.id}); closeModal();" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold px-4 py-3 rounded-2xl text-xs transition">
+              <button onclick="addToCart('${p.id}'); closeModal();" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold px-4 py-3 rounded-2xl text-xs transition">
                 + Ajouter Devis
               </button>
               <a href="https://wa.me/${STORE_PHONE}?text=${waMsg}" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-3 rounded-2xl text-xs flex items-center gap-2 shadow-lg shadow-emerald-600/30">
@@ -648,10 +519,11 @@ loadProducts();
     }
 
     function addToCart(id) {
-      const p = PRODUCTS.find(prod => prod.id === id);
+      const p = PRODUCTS.find(prod => String(prod.id) === String(id));
+      if (!p) return;
       cart.push(p);
       updateCartUI();
-      showToast(`" ${p.brand} " ajouté à votre devis!`);
+      showToast(`"${p.brand || p.title}" ajouté à votre devis!`);
     }
 
     function removeFromCart(index) {
@@ -660,13 +532,18 @@ loadProducts();
     }
 
     function updateCartUI() {
-      document.getElementById("cartBadge").innerText = cart.length;
+      const badge = document.getElementById("cartBadge");
+      if (badge) badge.innerText = cart.length;
+      
       const list = document.getElementById("cartItemsList");
-      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      const total = cart.reduce((sum, item) => sum + (Number(item.price) || 0), 0);
 
-      document.getElementById("cartTotal").innerText = total.toLocaleString() + " MAD";
+      const cartTotalEl = document.getElementById("cartTotal");
+      if (cartTotalEl) cartTotalEl.innerText = total.toLocaleString() + " MAD";
 
-      if(cart.length === 0) {
+      if (!list) return;
+
+      if (cart.length === 0) {
         list.innerHTML = `
           <div class="text-center py-10 text-gray-400">
             <i class="fa-solid fa-basket-shopping text-3xl mb-2"></i>
@@ -675,20 +552,29 @@ loadProducts();
         return;
       }
 
-      list.innerHTML = cart.map((item, idx) => `
-        <div class="flex items-center justify-between bg-gray-50 p-3 rounded-2xl border border-gray-100">
-          <div class="flex items-center gap-3">
-            <img src="${item.image}" onerror="handleImgError(this, ${item.id})" class="w-10 h-10 object-contain">
-            <div>
-              <h5 class="text-xs font-bold text-gray-900 line-clamp-1">${item.title}</h5>
-              <span class="text-xs text-brand-600 font-black">${item.price.toLocaleString()} MAD</span>
+      list.innerHTML = cart.map((item, idx) => {
+        let rawImages = Array.isArray(item.images) && item.images.length > 0 ? item.images : (item.image ? [item.image] : []);
+        let thumb = rawImages[0];
+        if (typeof thumb === 'object' && thumb !== null) thumb = thumb.image || thumb.src;
+        if (!thumb) thumb = 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80';
+
+        const priceNum = Number(item.price) || 0;
+
+        return `
+          <div class="flex items-center justify-between bg-gray-50 p-3 rounded-2xl border border-gray-100">
+            <div class="flex items-center gap-3">
+              <img src="${thumb}" onerror="handleImgError(this, '${item.id}')" class="w-10 h-10 object-contain">
+              <div>
+                <h5 class="text-xs font-bold text-gray-900 line-clamp-1">${item.title}</h5>
+                <span class="text-xs text-brand-600 font-black">${priceNum.toLocaleString()} MAD</span>
+              </div>
             </div>
+            <button onclick="removeFromCart(${idx})" class="text-red-500 hover:text-red-700 text-xs p-2">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
           </div>
-          <button onclick="removeFromCart(${idx})" class="text-red-500 hover:text-red-700 text-xs p-2">
-            <i class="fa-solid fa-trash-can"></i>
-          </button>
-        </div>
-      `).join('');
+        `;
+      }).join('');
     }
 
     function toggleCartDrawer() {
@@ -696,13 +582,14 @@ loadProducts();
     }
 
     function sendWhatsAppQuote() {
-      if(cart.length === 0) return alert("Veuillez d'abord ajouter des produits à votre devis.");
+      if (cart.length === 0) return alert("Veuillez d'abord ajouter des produits à votre devis.");
       
       let message = "Bonjour Planet Electro Ibork Settat, je souhaite recevoir une confirmation de prix pour cette sélection :\n\n";
       cart.forEach((item, index) => {
-        message += `${index + 1}. *${item.title}* - ${item.price.toLocaleString()} MAD\n`;
+        const priceNum = Number(item.price) || 0;
+        message += `${index + 1}. *${item.title}* - ${priceNum.toLocaleString()} MAD\n`;
       });
-      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      const total = cart.reduce((sum, item) => sum + (Number(item.price) || 0), 0);
       message += `\n*Total Estimé : ${total.toLocaleString()} MAD*\n\nMerci de me recontacter !`;
 
       window.open(`https://wa.me/${STORE_PHONE}?text=${encodeURIComponent(message)}`, '_blank');
@@ -710,12 +597,15 @@ loadProducts();
 
     function showToast(msg) {
       const toast = document.getElementById("toast");
-      document.getElementById("toastMessage").innerText = msg;
+      const toastMessage = document.getElementById("toastMessage");
+      if (!toast || !toastMessage) return;
+      toastMessage.innerText = msg;
       toast.classList.remove("-translate-y-10", "opacity-0", "pointer-events-none");
       setTimeout(() => {
         toast.classList.add("-translate-y-10", "opacity-0", "pointer-events-none");
       }, 2500);
     }
+
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
@@ -725,6 +615,6 @@ loadProducts();
         }
       });
     }
-</script>
+  </script>
 </body>
 </html>
