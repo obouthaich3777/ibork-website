@@ -2,7 +2,7 @@ backend:
   name: github
   repo: obouthaich3777/ibork-website
   branch: main
-  base_url: https://decap-bridge.vercel.app
+  base_url: https://ibork-website.vercel.app
   auth_endpoint: /api/auth
 
 media_folder: "assets/images"
