@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard | Planet Electro Ibork</title>
-  <!-- Tell Decap CMS explicitly where config.yml lives -->
   <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
   <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -20,6 +19,10 @@
             document.location.href = "/admin/";
           });
         }
+      });
+      // Point Identity widget to your Netlify backend URL
+      window.netlifyIdentity.init({
+        APIUrl: "https://planet-electro-ibork.netlify.app/.netlify/identity"
       });
     }
   </script>
