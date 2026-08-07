@@ -22,6 +22,19 @@
         "/assets/images/gemini_generated_image_z604dnz604dnz604.png"
       ],
       "desc": "Conçu pour le nettoyage des voitures, motos, vélos, du mobilier de jardin et des outils de jardinage. Offrant une pression allant jusqu'à 110 bars, il élimine la saleté incrustée rapidement et sans effort"
+    },
+    {
+      "id": "3",
+      "title": " LED UA55DU7000UXMV/UE55DU7100UXTK CRYS UHD",
+      "price": 5799,
+      "brand": "SAMSUNG",
+      "category": "AUDIO/VIDEO",
+      "images": [
+        "/assets/images/img_8578.jpeg",
+        "/assets/images/img_8579.jpeg",
+        "/assets/images/img_8580.jpeg"
+      ],
+      "desc": "sharp 4K resolution, bright and rich colors, deep black levels, and smooth motion handling"
     }
   ]
 }
