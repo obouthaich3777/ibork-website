@@ -1,6 +1,8 @@
 backend:
   name: git-gateway
   site_domain: planet-electro-ibork.netlify.app
+  identity_url: https://planet-electro-ibork.netlify.app/.netlify/identity
+  gateway_url: https://planet-electro-ibork.netlify.app/.netlify/git/github
   branch: main
 
 media_folder: "assets/images"
