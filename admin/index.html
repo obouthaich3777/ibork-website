@@ -4,13 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard | Planet Electro Ibork</title>
-  <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
-  <!-- Netlify Identity Widget -->
+  <!-- 1. Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Decap CMS Application -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <!-- 2. Configure Netlify API URL BEFORE Decap CMS loads -->
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
@@ -20,11 +18,13 @@
           });
         }
       });
-      // Point Identity widget to your Netlify backend URL
       window.netlifyIdentity.init({
         APIUrl: "https://planet-electro-ibork.netlify.app/.netlify/identity"
       });
     }
   </script>
+
+  <!-- 3. Decap CMS loads LAST -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
